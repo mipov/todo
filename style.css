@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&family=Ubuntu:wght@400;500&display=swap');
+
+.todo {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 40px;
+  background: linear-gradient(#1c122e, #1a6375);
+  /* background-color: #d360c9; */
+}
+
+.todo__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo__item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 20px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task__checkbox {
+  appearance: none;
+  display: block;
+  min-width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  border: 4px solid rgb(179, 175, 175);
+}
+.task__checkbox:checked {
+  border: 4px solid rgb(117, 114, 114);
+}
+.task__checkbox:checked::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 3px;
+  background-color: rgb(117, 114, 114);
+  left: 6px;
+  transform: rotate(40deg);
+}
+.task__checkbox:checked::before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 3px;
+  height: 14px;
+  background-color: rgb(117, 114, 114);
+  top: 6px;
+  left: 16px;
+  transform: rotate(40deg);
+}
+
+.task__text {
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+  color: rgb(179, 175, 175);
+  font-size: 22px;
+  margin-left: 15px;
+}
+
+.task__checkbox:checked + .task__text {
+  text-decoration: line-through;
+  color: rgb(117, 114, 114);
+}
+
+.task__delete {
+  position: absolute;
+  display: flex;
+  left: 70%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: url('trash.png') center no-repeat;
+  background-size: 22px;
+  background-color: rgb(179, 175, 175);
+  border: none;
+  justify-content: center;
+}
+
+.task__delete:hover {
+  box-shadow: 0px 0px 10px 3px rgb(117, 114, 114);
+}
+.task__delete:active {
+  border: 1px solid rgb(66, 66, 66);
+}
+
+.todo__add {
+  height: 90px;
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 40%;
+  border-radius: 50px;
+  border: none;
+  background: url('./add.png') no-repeat center;
+  background-size: 52px;
+  background-color: rgb(179, 175, 175);
+  margin-top: 60px;
+}
+.todo__add:hover {
+  box-shadow: 0px 0px 10px 3px rgb(117, 114, 114);
+}
+.todo__add:active {
+  border: 1px solid rgb(66, 66, 66);
+}
