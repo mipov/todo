@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@400;700&family=Ubuntu:wght@400;500&display=swap');
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .todo {
   display: flex;
-  width: 50%;
+  width: 100%;
+  min-width: 320px;
+  height: 100vh;
   flex-direction: column;
   margin: 0 auto;
-  border: 1px solid red;
-  padding: 40px;
   background: linear-gradient(#1c122e, #1a6375);
-  /* background-color: #d360c9; */
 }
 
 .todo__list {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin-left: 5%;
+  margin-right: 6%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -24,7 +28,7 @@
   display: flex;
   align-items: center;
   height: 80px;
-  padding-left: 20px;
+  margin-left: 5px;
 }
 
 .task {
@@ -40,9 +44,11 @@
   border-radius: 8px;
   border: 4px solid rgb(179, 175, 175);
 }
+
 .task__checkbox:checked {
   border: 4px solid rgb(117, 114, 114);
 }
+
 .task__checkbox:checked::after {
   content: '';
   display: block;
@@ -53,6 +59,7 @@
   left: 6px;
   transform: rotate(40deg);
 }
+
 .task__checkbox:checked::before {
   content: '';
   display: block;
@@ -72,7 +79,7 @@
   margin-left: 15px;
 }
 
-.task__checkbox:checked + .task__text {
+.task__checkbox:checked+.task__text {
   text-decoration: line-through;
   color: rgb(117, 114, 114);
 }
@@ -80,7 +87,7 @@
 .task__delete {
   position: absolute;
   display: flex;
-  left: 70%;
+  right: 5%;
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -88,34 +95,35 @@
   background-size: 22px;
   background-color: rgb(179, 175, 175);
   border: none;
-  justify-content: center;
 }
 
 .task__delete:hover {
   box-shadow: 0px 0px 10px 3px rgb(117, 114, 114);
 }
+
 .task__delete:active {
   border: 1px solid rgb(66, 66, 66);
 }
 
 .todo__add {
-  height: 90px;
-  width: 190px;
-  display: flex;
+  height: 50px;
+  width: 120px;
+  display: block;
   align-items: center;
   justify-content: center;
   position: relative;
-  left: 40%;
-  border-radius: 50px;
+  border-radius: 30px;
   border: none;
   background: url('./add.png') no-repeat center;
-  background-size: 52px;
+  background-size: 40px;
   background-color: rgb(179, 175, 175);
-  margin-top: 60px;
+  margin: 50px auto;
 }
+
 .todo__add:hover {
   box-shadow: 0px 0px 10px 3px rgb(117, 114, 114);
 }
+
 .todo__add:active {
   border: 1px solid rgb(66, 66, 66);
 }
